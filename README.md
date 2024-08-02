@@ -3,7 +3,20 @@
 ## Description
 In this project, we explore the capabilities and limitations of Gemma-2 when subjected to low-bit quantization. We conduct an empirical evaluation of various post-training quantization methods on Gemma-2, examining their impact on model performance across different bit-widths and benchmarks. Our study aims to provide a comprehensive understanding of Gemma-2’s behavior under quantization, identify the challenges associated with performance degradation, and propose potential solutions to mitigate these issues.
 
-![Example image](Diagram Gemma.png)
+![text](Diagram%20Gemma.png)
+
+## Quantized models:
+Link to [Hugging Face](https://huggingface.co/collections/StoyanGanchev/gemma-2-quantized-66ad3c6afa6a6034552a2fd3).
+### How to use:
+```python
+# Load model directly
+from transformers import AutoTokenizer, AutoModelForCausalLM
+path = "StoyanGanchev/"  # "/gemma-2-2B-int4"  "/gemma-2-2B-nf4"  "/gemma-2-9B-int4"  "/gemma-2-9B-nf4"
+
+tokenizer = AutoTokenizer.from_pretrained(path)
+model = AutoModelForCausalLM.from_pretrained(path)
+```
+
 
 ## Benchmark results:
 Gemma-2-9B
@@ -24,4 +37,4 @@ Gemma-2-2B
 | Gemma-2-2B (NF4) g128   | 9.15  | 13.05 | 78.02 | 78.96 | 49.15  | 53.53     | 69.14 | 65.76 |
 | Gemma-2-2B (AWQ4) g128  | 11.05 | 12.99 | 78.18 | 78.95 | 45.05  | 53.55     | 68.19 | 64.78 |
 
-
+Benchmark scores are computed with [`lm-evaluation-harness`](https://github.com/EleutherAI/lm-evaluation-harness).
