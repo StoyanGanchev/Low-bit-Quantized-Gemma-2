@@ -3,6 +3,8 @@
 ## Description
 In this project, we explore the capabilities and limitations of Gemma-2 when subjected to low-bit quantization. We conduct an empirical evaluation of various post-training quantization methods on Gemma-2, examining their impact on model performance across different bit-widths and benchmarks. Our study aims to provide a comprehensive understanding of Gemma-2’s behavior under quantization, identify the challenges associated with performance degradation, and propose potential solutions to mitigate these issues.
 
+![Example image](Diagram Gemma.png)
+
 ## Benchmark results:
 Gemma-2-9B
 | Benchmark               | Wiki  | C4    | PIQA  | ARC-E | ARC-C  | HellaSwag | Wino  | Avg.  |
